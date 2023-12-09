@@ -8,10 +8,25 @@ license = "MIT"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-either = "1.8.1"
+either = { version = "1.8.1", default-features = false, features = [] }
+email_address = { version = "0.2.4", default-features = false, features = [
+  "serde",
+  "serde_support",
+] }
+mediatype = { version = "0.19.16", default-features = false, features = [
+  "serde",
+] }
+semver = { version = "1.0.20", default-features = false, features = [
+  "std",
+  "serde",
+] }
 serde = { version = "1", features = ["derive"] }
-serde_json = "1"
-serde_with = "3.4.0"
+serde_json = { version = "1", default-features = false, features = [] }
+serde_with = { version = "3.4.0", default-features = false, features = [
+  "macros",
+  "std",
+] }
+url = { version = "2.5.0", default-features = false, features = ["serde"] }
 
 [dev-dependencies]
 assert-json-diff = "2.0.2"
